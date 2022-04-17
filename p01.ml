@@ -2,5 +2,5 @@
 
 let last xs =
   match List.rev xs with
-    | [] -> None
-    | h::tail -> Some h
+  | [] -> None
+  | h::tail -> Some h
