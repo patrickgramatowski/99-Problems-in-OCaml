@@ -1,6 +1,12 @@
-(* Write a function last : 'a list -> 'a option that returns the last element of a list. *)
-
-let last xs =
+let last(xs: 'a list): 'a option =
   match List.rev xs with
   | [] -> None
-  | h::tail -> Some h
+  | h :: _ -> Some h
+  
+(* w/o List.rev *)
+let rec last_no_rev(xs: 'a list): 'a option =
+  match xs with
+  | [] -> None
+  | [x] -> Some x
+  | _ :: tail -> last_no_rev tail
+
