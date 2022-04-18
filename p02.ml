@@ -1,6 +1,7 @@
 let rec last_two (xs: 'a list): ('a * 'a) option =
   match xs with
-  | [] -> None (* No match for [_] but it's still working as expected, why? -> '[] | [_] -> None' *)
+  | [] -> None (* No match for [_] but it's still working as expected, why? -> '[] | [_] -> None' ---> explained here: 
+                  https://github.com/patrickgramatowski/til/blob/master/ocaml/ocaml.ml *)
   | [x;y] -> Some (x, y)
   | _ :: tail -> last_two tail
   
